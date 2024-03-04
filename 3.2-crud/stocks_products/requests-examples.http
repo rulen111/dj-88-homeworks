@@ -13,6 +13,28 @@ Content-Type: application/json
 
 ###
 
+# создание продукта 2
+POST {{baseUrl}}/products/
+Content-Type: application/json
+
+{
+  "title": "Морковь",
+  "description": "Лучшая морковь на рынке"
+}
+
+###
+
+# создание продукта 3
+POST {{baseUrl}}/products/
+Content-Type: application/json
+
+{
+  "title": "Хлеб",
+  "description": "Прямо из печи"
+}
+
+###
+
 # получение продуктов
 GET {{baseUrl}}/products/
 Content-Type: application/json
@@ -63,8 +85,64 @@ Content-Type: application/json
 
 ###
 
+# создание склада 2
+POST {{baseUrl}}/stocks/
+Content-Type: application/json
+
+{
+  "address": "Где-то там, ну вот там да",
+  "positions": [
+    {
+      "product": 2,
+      "quantity": 550,
+      "price": 100.50
+    },
+    {
+      "product": 3,
+      "quantity": 100,
+      "price": 140
+    }
+  ]
+}
+
+###
+
+# создание склада 3
+POST {{baseUrl}}/stocks/
+Content-Type: application/json
+
+{
+  "address": "Ну а этот вообще вон там",
+  "positions": [
+    {
+      "product": 4,
+      "quantity": 50,
+      "price": 110.50
+    },
+    {
+      "product": 3,
+      "quantity": 200,
+      "price": 120
+    }
+  ]
+}
+
+###
+
+# Получение складов
+GET {{baseUrl}}/stocks/
+Content-Type: application/json
+
+###
+
+# Удаление склада
+DELETE {{baseUrl}}/stocks/4/
+Content-Type: application/json
+
+###
+
 # обновляем записи на складе
-PATCH {{baseUrl}}/stocks/4/
+PATCH {{baseUrl}}/stocks/5/
 Content-Type: application/json
 
 {
